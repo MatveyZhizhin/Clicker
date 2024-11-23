@@ -32,7 +32,7 @@ namespace Assets.Scripts.Game
             //_currentImage.sprite = _images[_currentLevel].sprite;
         }
 
-        public void ChangeLevel(ref int experience)
+        public void ChangeLevel(ref long experience)
         {          
             _currentLevel++;
             if (_currentLevel >= _images.Length)

@@ -6,8 +6,8 @@ namespace Assets.Scripts.Game
 {
     public class MainButton: MonoBehaviour
     {
-        [field: SerializeField] public int ResourceByClick { get; set; }
-        [field: SerializeField] public int MoneyByAutoClick { get; set; }
+        [field: SerializeField] public long ResourceByClick { get; set; }
+        [field: SerializeField] public long MoneyByAutoClick { get; set; }
 
         [SerializeField] private float TimeBetweenAutoClicks;
 

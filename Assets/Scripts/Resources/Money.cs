@@ -15,13 +15,13 @@ namespace Assets.Scripts.Resources
             Changed?.Invoke(_resourceValue.ToString());
         }
 
-        public override void Add(int value)
+        public override void Add(long value)
         {
             base.Add(value);
             Changed?.Invoke(StringParser.ParseFloatToShortString(_resourceValue, 1));
         }
 
-        public void SpendMoney(int value)
+        public void SpendMoney(long value)
         {
             _resourceValue -= value;
             Changed?.Invoke(StringParser.ParseFloatToShortString(_resourceValue, 1));

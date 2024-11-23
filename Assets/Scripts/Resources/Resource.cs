@@ -4,12 +4,12 @@ namespace Assets.Scripts.Resources
 {
     public class Resource : MonoBehaviour
     {
-        [SerializeField] protected int _resourceValue;
+        [SerializeField] protected long _resourceValue;
         public bool IsDoubled { private get; set; } = false;
 
-        public int ResourcesValue { get => _resourceValue; set => _resourceValue = value; }
+        public long ResourcesValue { get => _resourceValue; set => _resourceValue = value; }
 
-        public virtual void Add(int value)
+        public virtual void Add(long value)
         {
             if (IsDoubled)
                 value *= 2;

@@ -18,10 +18,10 @@ namespace YG
 
         // Ваши сохранения
 
-        public int ResourceByClick = 1;
-        public int MoneyByAutoClick = 0;
-        public int Money = 0;
-        public int Experience = 0;
+        public long ResourceByClick = 1;
+        public long MoneyByAutoClick = 0;
+        public long Money = 0;
+        public long Experience = 0;
         public int CurrentLevel = 1;
         public int MaxExperience = 500;
 

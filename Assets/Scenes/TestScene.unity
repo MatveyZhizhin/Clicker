@@ -2712,7 +2712,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cost: 10
-  _upgradeValue: 12323
+  _upgradeValue: 1000000000
 --- !u!1 &1452949044
 GameObject:
   m_ObjectHideFlags: 0

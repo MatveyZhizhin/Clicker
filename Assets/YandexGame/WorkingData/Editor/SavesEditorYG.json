@@ -1,5 +1,5 @@
 {
-    "idSave": 160,
+    "idSave": 230,
     "isFirstSession": false,
     "language": "ru",
     "promptDone": false,
@@ -10,10 +10,10 @@
         true,
         false
     ],
-    "ResourceByClick": 1,
+    "ResourceByClick": 261000000001,
     "MoneyByAutoClick": 0,
-    "Money": 0,
-    "Experience": 0,
-    "CurrentLevel": 1,
-    "MaxExperience": 500
+    "Money": 6331999999063,
+    "Experience": 6484000000110,
+    "CurrentLevel": 114,
+    "MaxExperience": 11000
 }

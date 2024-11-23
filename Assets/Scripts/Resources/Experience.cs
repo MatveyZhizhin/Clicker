@@ -19,7 +19,7 @@ namespace Assets.Scripts.Resources
             ExperienceChanged?.Invoke(_resourceValue);
         }
 
-        public override void Add(int value)
+        public override void Add(long value)
         {
             base.Add(value);
             if (_resourceValue >= _levelChanger.MaxExperience)
