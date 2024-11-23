@@ -9,28 +9,42 @@ namespace Assets.Scripts.Game
     {
         [field: SerializeField] public int MaxExperience { get; set; }
 
-        [SerializeField] private int _currentLevel = 1;
+        private int _currentLevel = 1;
+
+        public int CurrentLevel { get => _currentLevel; set => _currentLevel = value; }
+
         [SerializeField] private float _maxExperienceMultiplier;
         [SerializeField] protected int _additionalExperience;
 
-        [SerializeField] private Image[] _swords;
-        [SerializeField] private Image _currentSword;
+        [SerializeField] private Image[] _images;
+        [SerializeField] private Image _currentImage;
 
         public event Action<string> Changed;
 
         private void Start()
         {
             Changed?.Invoke(_currentLevel.ToString());
+            if (_currentLevel >= _images.Length)
+            {
+                Changed?.Invoke("Максимальный уровень");
+                return;
+            }
+            //_currentImage.sprite = _images[_currentLevel].sprite;
         }
 
         public void ChangeLevel(ref int experience)
-        {
+        {          
             _currentLevel++;
+            if (_currentLevel >= _images.Length)
+            {
+                Changed?.Invoke("Максимальный уровень");
+                return;
+            }
             Changed?.Invoke(_currentLevel.ToString());
             experience = 0;
             var newExperience = MaxExperience * _maxExperienceMultiplier + _additionalExperience;
             MaxExperience = Mathf.RoundToInt(newExperience);
-            //_currentSword.sprite = _swords[_currentLevel - 1].sprite;
+            //_currentImage.sprite = _images[_currentLevel - 1].sprite;          
         }
     }
 }

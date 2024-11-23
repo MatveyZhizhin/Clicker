@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Assets.Scripts.Game
 {
-    public class Sword : MonoBehaviour
+    public class MainButton: MonoBehaviour
     {
         [field: SerializeField] public int ResourceByClick { get; set; }
         [field: SerializeField] public int MoneyByAutoClick { get; set; }
@@ -13,11 +13,13 @@ namespace Assets.Scripts.Game
 
         private Experience _experience;
         private Money _money;
+        private SaveService _saveService;
 
         private void Awake()
         {
             _experience = FindObjectOfType<Experience>();
             _money = FindObjectOfType<Money>();
+            _saveService = FindObjectOfType<SaveService>();
         }
 
         private void Start()

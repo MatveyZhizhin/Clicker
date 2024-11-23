@@ -10,12 +10,12 @@ namespace Assets.Scripts.Upgraders
         [SerializeField] protected int _upgradeValue;
 
         protected Money _money;
-        protected Sword _sword;
+        protected MainButton _mainButton;
 
         private void Awake()
         {
             _money = FindObjectOfType<Money>();
-            _sword = FindObjectOfType<Sword>();
+            _mainButton = FindObjectOfType<MainButton>();
         }
 
         public virtual void Upgrade()

@@ -1,3 +1,4 @@
+using Assets.Scripts.Game;
 using Assets.Scripts.UI;
 using System;
 
@@ -17,13 +18,13 @@ namespace Assets.Scripts.Resources
         public override void Add(int value)
         {
             base.Add(value);
-            Changed?.Invoke(_resourceValue.ToString());
+            Changed?.Invoke(StringParser.ParseFloatToShortString(_resourceValue, 1));
         }
 
         public void SpendMoney(int value)
         {
             _resourceValue -= value;
-            Changed?.Invoke(_resourceValue.ToString());
+            Changed?.Invoke(StringParser.ParseFloatToShortString(_resourceValue, 1));
         }
     }
 }

@@ -18,6 +18,13 @@ namespace YG
 
         // Ваши сохранения
 
+        public int ResourceByClick = 1;
+        public int MoneyByAutoClick = 0;
+        public int Money = 0;
+        public int Experience = 0;
+        public int CurrentLevel = 1;
+        public int MaxExperience = 500;
+
         // ...
 
         // Поля (сохранения) можно удалять и создавать новые. При обновлении игры сохранения ломаться не должны

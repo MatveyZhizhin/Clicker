@@ -8,7 +8,7 @@ namespace Assets.Scripts.Upgraders
             if (!_money.HasMoney(_cost))
                 return;
             base.Upgrade();
-            _sword.MoneyByAutoClick += _upgradeValue;
+            _mainButton.MoneyByAutoClick += _upgradeValue;
         }
     }
 }

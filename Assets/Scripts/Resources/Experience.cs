@@ -14,6 +14,11 @@ namespace Assets.Scripts.Resources
             _levelChanger = FindObjectOfType<LevelChanger>();
         }
 
+        private void Start()
+        {
+            ExperienceChanged?.Invoke(_resourceValue);
+        }
+
         public override void Add(int value)
         {
             base.Add(value);

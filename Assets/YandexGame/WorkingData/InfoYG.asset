@@ -33,13 +33,13 @@ MonoBehaviour:
   loadAdWithDelaySimulation: 0
   testErrorOfRewardedAdsInEditor: 0
   saveCloud: 1
-  flush: 0
+  flush: 1
   localSaveSync: 1
   saveCloudInterval: 5
   saveOnQuitGame: 0
   quitGameParameters:
-    objectName: YandexGame
-    methodName: _SaveProgress
+    objectName: SaveService
+    methodName: Save
   leaderboardEnable: 1
   saveScoreAnonymousPlayers: 1
   leaderboardSimulation:

@@ -1,0 +1,19 @@
+{
+    "idSave": 160,
+    "isFirstSession": false,
+    "language": "ru",
+    "promptDone": false,
+    "money": 1,
+    "newPlayerName": "Hello!",
+    "openLevels": [
+        false,
+        true,
+        false
+    ],
+    "ResourceByClick": 1,
+    "MoneyByAutoClick": 0,
+    "Money": 0,
+    "Experience": 0,
+    "CurrentLevel": 1,
+    "MaxExperience": 500
+}

@@ -8,7 +8,7 @@ namespace Assets.Scripts.Upgraders
             if (!_money.HasMoney(_cost))
                 return;
             base.Upgrade();
-            _sword.ResourceByClick += _upgradeValue;
+            _mainButton.ResourceByClick += _upgradeValue;
         }
     }
 }
