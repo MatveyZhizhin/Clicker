@@ -1,4 +1,5 @@
 using Assets.Scripts.Resources;
+using Assets.Scripts.UI;
 using System.Collections;
 using UnityEngine;
 
@@ -13,13 +14,11 @@ namespace Assets.Scripts.Game
 
         private Experience _experience;
         private Money _money;
-        private SaveService _saveService;
 
         private void Awake()
         {
             _experience = FindObjectOfType<Experience>();
             _money = FindObjectOfType<Money>();
-            _saveService = FindObjectOfType<SaveService>();
         }
 
         private void Start()

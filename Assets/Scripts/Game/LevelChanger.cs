@@ -16,20 +16,20 @@ namespace Assets.Scripts.Game
         [SerializeField] private float _maxExperienceMultiplier;
         [SerializeField] protected int _additionalExperience;
 
-        [SerializeField] private Image[] _images;
+        [SerializeField] private Sprite[] _images;
         [SerializeField] private Image _currentImage;
 
         public event Action<string> Changed;
 
         private void Start()
         {
-            Changed?.Invoke(_currentLevel.ToString());
+            Changed?.Invoke("Уровень: " + _currentLevel.ToString());
             if (_currentLevel >= _images.Length)
             {
                 Changed?.Invoke("Максимальный уровень");
                 return;
             }
-            //_currentImage.sprite = _images[_currentLevel].sprite;
+            _currentImage.sprite = _images[_currentLevel - 1];
         }
 
         public void ChangeLevel(ref long experience)
@@ -40,11 +40,11 @@ namespace Assets.Scripts.Game
                 Changed?.Invoke("Максимальный уровень");
                 return;
             }
-            Changed?.Invoke(_currentLevel.ToString());
+            Changed?.Invoke("Уровень: " + _currentLevel.ToString());
             experience = 0;
             var newExperience = MaxExperience * _maxExperienceMultiplier + _additionalExperience;
             MaxExperience = Mathf.RoundToInt(newExperience);
-            //_currentImage.sprite = _images[_currentLevel - 1].sprite;          
+            _currentImage.sprite = _images[_currentLevel - 1];          
         }
     }
 }
