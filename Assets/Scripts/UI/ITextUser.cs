@@ -4,7 +4,7 @@ namespace Assets.Scripts.UI
 {
     public interface ITextUser
     {
-        public event Action<string> Changed;
+        public event Action<string> TextChanged;
     }
 }
 

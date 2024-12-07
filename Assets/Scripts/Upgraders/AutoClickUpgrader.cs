@@ -5,7 +5,7 @@ namespace Assets.Scripts.Upgraders
 {
     public class AutoClickUpgrader : Upgrader, ITextUser
     {
-        public event Action<string> Changed;
+        public event Action<string> TextChanged;
 
         public override void Upgrade()
         {
@@ -13,7 +13,7 @@ namespace Assets.Scripts.Upgraders
                 return;
             base.Upgrade();
             _mainButton.MoneyByAutoClick += _upgradeValue;
-            Changed?.Invoke(_mainButton.MoneyByAutoClick.ToString());
+            TextChanged?.Invoke(_mainButton.MoneyByAutoClick.ToString());
         }
     }
 }

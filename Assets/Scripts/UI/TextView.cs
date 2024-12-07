@@ -21,12 +21,12 @@ namespace Assets.Scripts.UI
 
         private void OnEnable()
         {
-            _textUser.Changed += DisplayText;
+            _textUser.TextChanged += DisplayText;
         }
 
         private void OnDisable()
         {
-            _textUser.Changed -= DisplayText;
+            _textUser.TextChanged -= DisplayText;
         }
     }
 }

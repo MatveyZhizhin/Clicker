@@ -1,5 +1,4 @@
 using Assets.Scripts.Resources;
-using Assets.Scripts.UI;
 using System.Collections;
 using UnityEngine;
 
@@ -8,7 +7,8 @@ namespace Assets.Scripts.Game
     public class MainButton: MonoBehaviour
     {
         [field: SerializeField] public long ResourceByClick { get; set; }
-        [field: SerializeField] public long MoneyByAutoClick { get; set; }
+        [field: SerializeField] public long MoneyByAutoClick { get; set;}
+     
 
         [SerializeField] private float TimeBetweenAutoClicks;
 

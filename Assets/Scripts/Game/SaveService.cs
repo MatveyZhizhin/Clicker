@@ -1,6 +1,6 @@
 using Assets.Scripts.Resources;
+using Assets.Scripts.Upgraders;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using YG;
@@ -15,6 +15,9 @@ namespace Assets.Scripts.Game
         private MainButton _mainButton;
 
         [SerializeField] private float _autoSaveInterval;
+        [SerializeField] private Upgrader[] _upgraders;
+
+        private const string YandexLeaderboardName = "Money";
 
         private void Awake()
         {
@@ -31,12 +34,22 @@ namespace Assets.Scripts.Game
 
         private void Save()
         {
+            if (_money.ResourcesValue > YandexGame.savesData.Money)
+            {
+                YandexGame.NewLeaderboardScores(YandexLeaderboardName, _money.ResourcesValue);
+            }
+
             YandexGame.savesData.Money = _money.ResourcesValue;
             YandexGame.savesData.Experience = _experience.ResourcesValue;
             YandexGame.savesData.CurrentLevel = _levelChanger.CurrentLevel;
             YandexGame.savesData.MaxExperience = _levelChanger.MaxExperience;
             YandexGame.savesData.ResourceByClick = _mainButton.ResourceByClick;
             YandexGame.savesData.MoneyByAutoClick = _mainButton.MoneyByAutoClick;
+
+            for (int i = 0; i < _upgraders.Length; i++)
+            {
+                YandexGame.savesData.UnlockedUpgraders[i] = _upgraders[i].IsUnlocked;
+            }
 
             YandexGame.SaveProgress();
         }
@@ -49,6 +62,11 @@ namespace Assets.Scripts.Game
             _levelChanger.MaxExperience = YandexGame.savesData.MaxExperience;
             _mainButton.ResourceByClick = YandexGame.savesData.ResourceByClick;
             _mainButton.MoneyByAutoClick = YandexGame.savesData.MoneyByAutoClick;
+
+            for (int i = 0; i < _upgraders.Length; i++)
+            {
+                _upgraders[i].IsUnlocked = YandexGame.savesData.UnlockedUpgraders[i];
+            }
         }
 
         private void OnEnable()
@@ -73,6 +91,7 @@ namespace Assets.Scripts.Game
         public void ResetProgress()
         {
             YandexGame.ResetSaveProgress();
+            YandexGame.NewLeaderboardScores(YandexLeaderboardName, 0);
             YandexGame.SaveProgress();
             SceneManager.LoadScene(0);
         }

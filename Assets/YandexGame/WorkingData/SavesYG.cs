@@ -24,6 +24,7 @@ namespace YG
         public long Experience = 0;
         public int CurrentLevel = 1;
         public int MaxExperience = 500;
+        public bool[] UnlockedUpgraders = new bool[5];
 
         // ...
 
@@ -36,6 +37,7 @@ namespace YG
             // Допустим, задать значения по умолчанию для отдельных элементов массива
 
             openLevels[1] = true;
+            UnlockedUpgraders[0] = true;
         }
     }
 }
