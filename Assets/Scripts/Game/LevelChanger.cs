@@ -27,7 +27,6 @@ namespace Assets.Scripts.Game
             if (_currentLevel >= _images.Length)
             {
                 TextChanged?.Invoke("Максимальный уровень");
-                return;
             }
             _currentImage.sprite = _images[_currentLevel - 1];
         }

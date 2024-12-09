@@ -18,13 +18,13 @@ namespace YG
 
         // Ваши сохранения
 
-        public long ResourceByClick = 1;
+        public long MoneyByClick = 1;
         public long MoneyByAutoClick = 0;
         public long Money = 0;
         public long Experience = 0;
         public int CurrentLevel = 1;
         public int MaxExperience = 500;
-        public bool[] UnlockedUpgraders = new bool[5];
+        public bool[] UnlockedUpgraders = new bool[14];
 
         // ...
 

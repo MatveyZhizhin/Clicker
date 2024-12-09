@@ -1,5 +1,7 @@
 using Assets.Scripts.Game;
 using Assets.Scripts.Resources;
+using Assets.Scripts.UI;
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,15 +9,15 @@ namespace Assets.Scripts.Upgraders
 {
     public class Upgrader : MonoBehaviour
     {
-        [SerializeField] protected int _cost;
-        [SerializeField] protected int _upgradeValue;
+        [SerializeField] protected long _cost;
+        [SerializeField] protected long _upgradeValue;
 
         [field: SerializeField] public bool IsUnlocked { get; set; }
 
         [SerializeField] private Image _lockedButtonImage;
+        [SerializeField] private AudioSource _purchaseSound;
 
-        public int Cost => _cost;
-        public int UpgradeValue => _upgradeValue;
+        public long Cost => _cost;
 
         protected Money _money;
         protected MainButton _mainButton;
@@ -26,17 +28,10 @@ namespace Assets.Scripts.Upgraders
             _mainButton = FindObjectOfType<MainButton>();
         }
 
-        private void Start()
-        {
-            if (IsUnlocked)
-            {
-                UnlockButton();
-            }
-        }
-
         public virtual void Upgrade()
         {
             _money.SpendMoney(_cost);
+            _purchaseSound.Play();
         }
 
         public void UnlockButton()

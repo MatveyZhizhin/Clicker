@@ -43,7 +43,7 @@ namespace Assets.Scripts.Game
             YandexGame.savesData.Experience = _experience.ResourcesValue;
             YandexGame.savesData.CurrentLevel = _levelChanger.CurrentLevel;
             YandexGame.savesData.MaxExperience = _levelChanger.MaxExperience;
-            YandexGame.savesData.ResourceByClick = _mainButton.ResourceByClick;
+            YandexGame.savesData.MoneyByClick = _mainButton.MoneyByClick;
             YandexGame.savesData.MoneyByAutoClick = _mainButton.MoneyByAutoClick;
 
             for (int i = 0; i < _upgraders.Length; i++)
@@ -60,7 +60,7 @@ namespace Assets.Scripts.Game
             _experience.ResourcesValue = YandexGame.savesData.Experience;
             _levelChanger.CurrentLevel = YandexGame.savesData.CurrentLevel;
             _levelChanger.MaxExperience = YandexGame.savesData.MaxExperience;
-            _mainButton.ResourceByClick = YandexGame.savesData.ResourceByClick;
+            _mainButton.MoneyByClick = YandexGame.savesData.MoneyByClick;
             _mainButton.MoneyByAutoClick = YandexGame.savesData.MoneyByAutoClick;
 
             for (int i = 0; i < _upgraders.Length; i++)

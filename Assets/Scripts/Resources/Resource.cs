@@ -5,7 +5,7 @@ namespace Assets.Scripts.Resources
     public class Resource : MonoBehaviour
     {
         [SerializeField] protected long _resourceValue;
-        public bool IsDoubled { private get; set; } = false;
+        public bool IsDoubled { get; set; } = false;
 
         public long ResourcesValue { get => _resourceValue; set => _resourceValue = value; }
 

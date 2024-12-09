@@ -1,4 +1,6 @@
 using Assets.Scripts.Resources;
+using Assets.Scripts.UI;
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -6,7 +8,7 @@ namespace Assets.Scripts.Game
 {
     public class MainButton: MonoBehaviour
     {
-        [field: SerializeField] public long ResourceByClick { get; set; }
+        [field: SerializeField] public long MoneyByClick { get; set; }
         [field: SerializeField] public long MoneyByAutoClick { get; set;}
      
 
@@ -14,6 +16,8 @@ namespace Assets.Scripts.Game
 
         private Experience _experience;
         private Money _money;
+
+        public event Action<long> Clicked;
 
         private void Awake()
         {
@@ -28,8 +32,14 @@ namespace Assets.Scripts.Game
 
         public void Click()
         {
-            _money.Add(ResourceByClick);
-            _experience.Add(ResourceByClick);
+            _money.Add(MoneyByClick);
+            _experience.Add(1);
+            if (_money.IsDoubled)
+            {
+                Clicked?.Invoke(MoneyByClick * 2);
+                return;
+            }
+            Clicked?.Invoke(MoneyByClick);
         }
 
         private IEnumerator AutoClick()

@@ -8,26 +8,28 @@ namespace Assets.Scripts.Resources
     {
         public event Action<string> TextChanged;
         public event Action<long> MoneyChanged;
+        public event Action<long> MoneyDecreased;
 
-        public bool HasMoney(int value) => _resourceValue >= value;
+        public bool HasMoney(long value) => _resourceValue >= value;
 
         private void Start()
         {
-            TextChanged?.Invoke(_resourceValue.ToString());
+            TextChanged?.Invoke(StringParser.ParseFloatToShortString(_resourceValue, 2));
         }
 
         public override void Add(long value)
         {
             base.Add(value);
-            TextChanged?.Invoke(StringParser.ParseFloatToShortString(_resourceValue, 1));
+            TextChanged?.Invoke(StringParser.ParseFloatToShortString(_resourceValue, 2));
             MoneyChanged?.Invoke(_resourceValue);
         }
 
         public void SpendMoney(long value)
         {
             _resourceValue -= value;
-            TextChanged?.Invoke(StringParser.ParseFloatToShortString(_resourceValue, 1));
+            TextChanged?.Invoke(StringParser.ParseFloatToShortString(_resourceValue, 2));
             MoneyChanged?.Invoke(_resourceValue);
+            MoneyDecreased?.Invoke(value);
         }
     }
 }

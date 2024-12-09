@@ -1,5 +1,6 @@
 using Assets.Scripts.UI;
 using System;
+using Assets.Scripts.Game;
 
 namespace Assets.Scripts.Upgraders
 {
@@ -7,13 +8,23 @@ namespace Assets.Scripts.Upgraders
     {
         public event Action<string> TextChanged;
 
+        private void Start()
+        {
+            if (IsUnlocked)
+            {
+                UnlockButton();
+            }
+
+            TextChanged?.Invoke(StringParser.ParseFloatToShortString(_mainButton.MoneyByAutoClick, 1));
+        }
+
         public override void Upgrade()
         {
             if (!_money.HasMoney(_cost))
                 return;
             base.Upgrade();
             _mainButton.MoneyByAutoClick += _upgradeValue;
-            TextChanged?.Invoke(_mainButton.MoneyByAutoClick.ToString());
+            TextChanged?.Invoke(StringParser.ParseFloatToShortString(_mainButton.MoneyByAutoClick, 1));
         }
     }
 }
