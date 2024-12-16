@@ -2,6 +2,7 @@ using Assets.Scripts.UI;
 using System;
 using UnityEngine;
 using UnityEngine.UI;
+using Assets.Scripts.AnimatorsConstans;
 
 namespace Assets.Scripts.Game
 {
@@ -18,6 +19,7 @@ namespace Assets.Scripts.Game
 
         [SerializeField] private Sprite[] _images;
         [SerializeField] private Image _currentImage;
+        [SerializeField] private Animator _levelChangerAnimator;
 
         public event Action<string> TextChanged;
 
@@ -43,6 +45,11 @@ namespace Assets.Scripts.Game
             experience = 0;
             var newExperience = MaxExperience * _maxExperienceMultiplier + _additionalExperience;
             MaxExperience = Mathf.RoundToInt(newExperience);
+            _levelChangerAnimator.SetTrigger(LevelChangerAnimationConstans.LevelChanged);           
+        }
+
+        public void ChangeMainButtonSprite()
+        {
             _currentImage.sprite = _images[_currentLevel - 1];
         }
     }

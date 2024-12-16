@@ -1,5 +1,5 @@
 {
-    "idSave": 1620,
+    "idSave": 1914,
     "isFirstSession": false,
     "language": "ru",
     "promptDone": false,
@@ -10,10 +10,10 @@
         true,
         false
     ],
-    "MoneyByClick": 8,
-    "MoneyByAutoClick": 24,
-    "Money": 717,
-    "Experience": 13,
+    "MoneyByClick": 1,
+    "MoneyByAutoClick": 0,
+    "Money": 182,
+    "Experience": 82,
     "CurrentLevel": 2,
     "MaxExperience": 1100,
     "UnlockedUpgraders": [

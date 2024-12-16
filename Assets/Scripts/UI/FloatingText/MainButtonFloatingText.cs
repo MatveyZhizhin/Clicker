@@ -15,7 +15,7 @@ namespace Assets.Scripts.UI.FloatingText
 
         protected override void SpawnFloatingText(long value)
         {
-            var newText = Instantiate(_text, Camera.main.ScreenToWorldPoint(Input.mousePosition), Quaternion.identity);
+            var newText = Instantiate(_text, Camera.main.ScreenToWorldPoint(Input.mousePosition), _text.transform.rotation);
             newText.GetComponentInChildren<TextMeshProUGUI>().SetText(_prefix + StringParser.ParseFloatToShortString(value, 1));
             Destroy(newText, _lifeTime);
         }
