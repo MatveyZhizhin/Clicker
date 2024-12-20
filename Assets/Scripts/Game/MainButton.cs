@@ -32,14 +32,14 @@ namespace Assets.Scripts.Game
 
         public void Click()
         {
+            _money.Add(MoneyByClick);
+            _experience.Add(1);
             if (_money.IsDoubled)
             {
                 Clicked?.Invoke(MoneyByClick * 2);
                 return;
             }
-            Clicked?.Invoke(MoneyByClick);
-            _money.Add(MoneyByClick);
-            _experience.Add(1);          
+            Clicked?.Invoke(MoneyByClick);                    
         }
 
         private IEnumerator AutoClick()
