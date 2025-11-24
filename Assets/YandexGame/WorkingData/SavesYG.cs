@@ -25,7 +25,6 @@ namespace YG
         public int CurrentLevel = 1;
         public int MaxExperience = 500;
         public bool[] UnlockedUpgraders = new bool[14];
-
         // ...
 
         // Поля (сохранения) можно удалять и создавать новые. При обновлении игры сохранения ломаться не должны
@@ -37,7 +36,6 @@ namespace YG
             // Допустим, задать значения по умолчанию для отдельных элементов массива
 
             openLevels[1] = true;
-            UnlockedUpgraders[0] = true;
         }
     }
 }
