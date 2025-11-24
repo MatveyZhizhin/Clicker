@@ -1,0 +1,35 @@
+{
+    "idSave": 2322,
+    "isFirstSession": false,
+    "language": "ru",
+    "promptDone": false,
+    "money": 1,
+    "newPlayerName": "Hello!",
+    "openLevels": [
+        false,
+        true,
+        false
+    ],
+    "MoneyByClick": 10,
+    "MoneyByAutoClick": 60,
+    "Money": 886,
+    "Experience": 267,
+    "CurrentLevel": 2,
+    "MaxExperience": 1100,
+    "UnlockedUpgraders": [
+        true,
+        true,
+        true,
+        true,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+    ]
+}
