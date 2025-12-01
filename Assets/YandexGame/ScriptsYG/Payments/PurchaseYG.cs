@@ -2,6 +2,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using YG.Utils.Pay;
+using TMPro;
 #if YG_TEXT_MESH_PRO
 using TMPro;
 #endif

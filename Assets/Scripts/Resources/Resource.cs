@@ -9,9 +9,9 @@ namespace Assets.Scripts.Resources
 
         public long ResourcesValue { get => _resourceValue; set => _resourceValue = value; }
 
-        public virtual void Add(long value)
+        public virtual void Add(long value, bool isPurchase)
         {
-            if (IsDoubled)
+            if (IsDoubled && !isPurchase)
                 value *= 2;
 
             _resourceValue += value;

@@ -1,8 +1,11 @@
+using UnityEngine;
 
 namespace Assets.Scripts.Upgraders
 {
     public class ClickUpgrader : Upgrader
     {
+        [SerializeField] private bool _isExperienceUpgrader;
+
         private void Start()
         {
             if (IsUnlocked)
@@ -16,7 +19,14 @@ namespace Assets.Scripts.Upgraders
             if (!_money.HasMoney(_cost))
                 return;
             base.Upgrade();
-            _mainButton.MoneyByClick += _upgradeValue;
+            if (_isExperienceUpgrader)
+            {
+                _mainButton.ExperienceByClick += _upgradeValue;
+            }
+            else
+            {
+                _mainButton.MoneyByClick += _upgradeValue;
+            }            
         }
     }
 }

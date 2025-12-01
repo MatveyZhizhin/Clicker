@@ -10,6 +10,8 @@ namespace Assets.Scripts.Game
     {
         [field: SerializeField] public long MoneyByClick { get; set; }
         [field: SerializeField] public long MoneyByAutoClick { get; set;}
+
+        [field: SerializeField] public long ExperienceByClick { get; set; }
      
 
         [SerializeField] private float TimeBetweenAutoClicks;
@@ -33,7 +35,7 @@ namespace Assets.Scripts.Game
         public void Click()
         {
             _money.Add(MoneyByClick);
-            _experience.Add(1);
+            _experience.Add(ExperienceByClick);
             if (_money.IsDoubled)
             {
                 Clicked?.Invoke(MoneyByClick * 2);

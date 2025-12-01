@@ -17,9 +17,9 @@ namespace Assets.Scripts.Resources
             TextChanged?.Invoke(StringParser.ParseFloatToShortString(_resourceValue, 2));
         }
 
-        public override void Add(long value)
+        public override void Add(long value, bool isPurchase = false)
         {
-            base.Add(value);
+            base.Add(value, isPurchase);
             TextChanged?.Invoke(StringParser.ParseFloatToShortString(_resourceValue, 2));
             MoneyChanged?.Invoke(_resourceValue);
         }

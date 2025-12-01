@@ -275,30 +275,57 @@ MonoBehaviour:
     de: 
     hi: 
   purshasesSimulation:
-  - id: gun
-    title: Gun
-    description: Product - Gun
-    imageURI: https://justplaygames.ru/public/Paymant1.png
-    price: 5 YAN
-    priceValue: 5
+  - id: 100
+    title: "100 \u0437\u0432\u0451\u0437\u0434"
+    description: 
+    imageURI: https://storage.dyor.io/jettons/EQBoAf84VraosjSreBbXx669D4lZuVi3SKmCf_zbtO1H8qD3/image.png
+    price: 15 YAN
+    priceValue: 15
     priceCurrencyCode: YAN
     currencyImageURL: https://yastatic.net/s3/games-static/static-data/images/payments/sdk/currency-icon-s@2x.png
     consumed: 1
-  - id: armor
-    title: Armor
-    description: Product - Armor
-    imageURI: https://justplaygames.ru/public/Paymant2.png
-    price: 10 YAN
-    priceValue: 10
-    priceCurrencyCode: YAN
-    currencyImageURL: https://yastatic.net/s3/games-static/static-data/images/payments/sdk/currency-icon-s@2x.png
-    consumed: 1
-  - id: grenade
-    title: Grenade
-    description: Product - Grenade
-    imageURI: https://justplaygames.ru/public/Paymant3.png
+  - id: 500
+    title: "500 \u0437\u0432\u0451\u0437\u0434"
+    description: 
+    imageURI: https://storage.dyor.io/jettons/EQBoAf84VraosjSreBbXx669D4lZuVi3SKmCf_zbtO1H8qD3/image.png
     price: 30 YAN
-    priceValue: 30
+    priceValue: 15
+    priceCurrencyCode: YAN
+    currencyImageURL: https://yastatic.net/s3/games-static/static-data/images/payments/sdk/currency-icon-s@2x.png
+    consumed: 1
+  - id: 1000
+    title: "1k \u0437\u0432\u0451\u0437\u0434"
+    description: 
+    imageURI: https://storage.dyor.io/jettons/EQBoAf84VraosjSreBbXx669D4lZuVi3SKmCf_zbtO1H8qD3/image.png
+    price: 50 YAN
+    priceValue: 15
+    priceCurrencyCode: YAN
+    currencyImageURL: https://yastatic.net/s3/games-static/static-data/images/payments/sdk/currency-icon-s@2x.png
+    consumed: 1
+  - id: 10000
+    title: "10k \u0437\u0432\u0451\u0437\u0434"
+    description: 
+    imageURI: https://storage.dyor.io/jettons/EQBoAf84VraosjSreBbXx669D4lZuVi3SKmCf_zbtO1H8qD3/image.png
+    price: 50 YAN
+    priceValue: 15
+    priceCurrencyCode: YAN
+    currencyImageURL: https://yastatic.net/s3/games-static/static-data/images/payments/sdk/currency-icon-s@2x.png
+    consumed: 1
+  - id: 100000
+    title: "100k \u0437\u0432\u0451\u0437\u0434"
+    description: 
+    imageURI: https://storage.dyor.io/jettons/EQBoAf84VraosjSreBbXx669D4lZuVi3SKmCf_zbtO1H8qD3/image.png
+    price: 50 YAN
+    priceValue: 15
+    priceCurrencyCode: YAN
+    currencyImageURL: https://yastatic.net/s3/games-static/static-data/images/payments/sdk/currency-icon-s@2x.png
+    consumed: 1
+  - id: 1000000
+    title: "1M \u0437\u0432\u0451\u0437\u0434"
+    description: 
+    imageURI: https://storage.dyor.io/jettons/EQBoAf84VraosjSreBbXx669D4lZuVi3SKmCf_zbtO1H8qD3/image.png
+    price: 50 YAN
+    priceValue: 15
     priceCurrencyCode: YAN
     currencyImageURL: https://yastatic.net/s3/games-static/static-data/images/payments/sdk/currency-icon-s@2x.png
     consumed: 1
