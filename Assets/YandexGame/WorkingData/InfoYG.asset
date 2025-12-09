@@ -182,7 +182,7 @@ MonoBehaviour:
     thisPlayer:
       rank: 2
       score: 10
-  LocalizationEnable: 0
+  LocalizationEnable: 1
   callingLanguageCheck: 1
   translateMethod: 0
   domainAutoLocalization: com
@@ -219,6 +219,36 @@ MonoBehaviour:
     hi: 0
   fonts:
     defaultFont: []
+    ru: []
+    en: []
+    tr: []
+    az: []
+    be: []
+    he: []
+    hy: []
+    ka: []
+    et: []
+    fr: []
+    kk: []
+    ky: []
+    lt: []
+    lv: []
+    ro: []
+    tg: []
+    tk: []
+    uk: []
+    uz: []
+    es: []
+    pt: []
+    ar: []
+    id: []
+    ja: []
+    it: []
+    de: []
+    hi: []
+  fontsTMP:
+    defaultFont:
+    - {fileID: 11400000, guid: d83d74d027a16d646ac4e800d5ed8e83, type: 2}
     ru: []
     en: []
     tr: []
