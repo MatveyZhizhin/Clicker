@@ -23,7 +23,7 @@ namespace YG
         public long Money = 0;
         public long Experience = 0;
         public int CurrentLevel = 1;
-        public int MaxExperience = 500;
+        public int MaxExperience = 50;
         public bool[] UnlockedUpgraders = new bool[14];
 
         // ...
