@@ -18,7 +18,7 @@ namespace Assets.Scripts.YGScripts
         [SerializeField] private float _autoSaveInterval;
         [SerializeField] private Upgrader[] _upgraders;
 
-        private const string YandexLeaderboardName = "Money";
+        private const string YandexLeaderboardName = "Level";
 
         private void Awake()
         {

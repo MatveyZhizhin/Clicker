@@ -19,15 +19,20 @@ namespace Assets.Scripts.Game
                 value /= 1000000;
                 suffix = 'M';
             }
-            else if (value >= 1000000000 & value < 1000000000000)
+            else if (value >= 1000000000 && value < 1000000000000)
             {
                 value /= 1000000000;
                 suffix = 'B';
             }
-            else if (value >= 1000000000000)
+            else if (value >= 1000000000000 && value < 1000000000000000)
             {
                 value /= 1000000000000;
                 suffix = 'T';
+            }
+            else if (value >= 1000000000000000)
+            {
+                value /= 1000000000000000;
+                suffix = 'q';
             }
 
             return Math.Round(value, digits).ToString() + suffix;
