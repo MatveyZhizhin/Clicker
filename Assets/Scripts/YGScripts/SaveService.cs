@@ -11,7 +11,7 @@ namespace Assets.Scripts.YGScripts
     public class SaveService : MonoBehaviour
     {
         private Money _money;
-        private Experience _experience;
+        private Health _health;
         private LevelChanger _levelChanger;
         private MainButton _mainButton;
 
@@ -23,7 +23,7 @@ namespace Assets.Scripts.YGScripts
         private void Awake()
         {
             _money = FindObjectOfType<Money>();
-            _experience = FindObjectOfType<Experience>();
+            _health = FindObjectOfType<Health>();
             _levelChanger = FindObjectOfType<LevelChanger>();
             _mainButton = FindObjectOfType<MainButton>();
         }
@@ -35,16 +35,18 @@ namespace Assets.Scripts.YGScripts
 
         private void Save()
         {
-            if (_money.ResourcesValue > YandexGame.savesData.Money)
+            if (_levelChanger.CurrentLevel > YandexGame.savesData.CurrentLevel)
             {
-                YandexGame.NewLeaderboardScores(YandexLeaderboardName, _money.ResourcesValue);
+                YandexGame.NewLeaderboardScores(YandexLeaderboardName, _levelChanger.CurrentLevel);
             }
 
+            YandexGame.savesData.HealthByClick = _mainButton.HealthByClick;
             YandexGame.savesData.Money = _money.ResourcesValue;
-            YandexGame.savesData.Experience = _experience.ResourcesValue;
+            YandexGame.savesData.Health = _health.ResourcesValue;
             YandexGame.savesData.CurrentLevel = _levelChanger.CurrentLevel;
-            YandexGame.savesData.MaxExperience = _levelChanger.MaxExperience;
-            YandexGame.savesData.MoneyByClick = _mainButton.MoneyByClick;
+            YandexGame.savesData.CurrentIndex = _levelChanger.CurrentIndex;
+            YandexGame.savesData.StartHealth = _levelChanger.StartHealth;
+            YandexGame.savesData.StartReward = _levelChanger.StartReward;
             YandexGame.savesData.MoneyByAutoClick = _mainButton.MoneyByAutoClick;
 
             for (int i = 0; i < _upgraders.Length; i++)
@@ -57,11 +59,13 @@ namespace Assets.Scripts.YGScripts
 
         private void Load()
         {
+            _mainButton.HealthByClick = YandexGame.savesData.HealthByClick;
             _money.ResourcesValue = YandexGame.savesData.Money;
-            _experience.ResourcesValue = YandexGame.savesData.Experience;
+            _health.ResourcesValue = YandexGame.savesData.Health;
             _levelChanger.CurrentLevel = YandexGame.savesData.CurrentLevel;
-            _levelChanger.MaxExperience = YandexGame.savesData.MaxExperience;
-            _mainButton.MoneyByClick = YandexGame.savesData.MoneyByClick;
+            _levelChanger.CurrentIndex = YandexGame.savesData.CurrentIndex;
+            _levelChanger.StartHealth = YandexGame.savesData.StartHealth;
+            _levelChanger.StartReward = YandexGame.savesData.StartReward;
             _mainButton.MoneyByAutoClick = YandexGame.savesData.MoneyByAutoClick;
 
             for (int i = 0; i < _upgraders.Length; i++)

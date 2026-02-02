@@ -15,7 +15,6 @@ namespace Assets.Scripts.YGScripts.Purchases
 
         protected void Purchase(string id)
         {
-
             _money.Add(long.Parse(id), true);
         }
 

@@ -24,9 +24,9 @@ namespace Assets.Scripts.Resources
             MoneyChanged?.Invoke(_resourceValue);
         }
 
-        public void SpendMoney(long value)
+        public override void Remove(long value)
         {
-            _resourceValue -= value;
+            base.Remove(value);
             TextChanged?.Invoke(StringParser.ParseFloatToShortString(_resourceValue, 2));
             MoneyChanged?.Invoke(_resourceValue);
             MoneyDecreased?.Invoke(value);

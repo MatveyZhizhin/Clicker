@@ -16,5 +16,10 @@ namespace Assets.Scripts.Resources
 
             _resourceValue += value;
         }
+
+        public virtual void Remove(long value)
+        {
+            _resourceValue -= value;
+        }
     }
 }

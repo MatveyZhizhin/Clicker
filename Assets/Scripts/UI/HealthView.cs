@@ -5,32 +5,32 @@ using UnityEngine.UI;
 
 namespace Assets.Scripts.UI
 {
-    public class ExperienceView : MonoBehaviour
+    public class HealthView : MonoBehaviour
     {
         [SerializeField] private Image _progressBar;
 
         private LevelChanger _levels;
-        private Experience _experience;
+        private Health _health;
 
         private void Awake()
         {
             _levels = FindObjectOfType<LevelChanger>();
-            _experience = FindObjectOfType<Experience>();
+            _health = FindObjectOfType<Health>();
         }
 
         private void OnEnable()
         {
-            _experience.ExperienceChanged += RenderProgressBar;
+            _health.HealthChanged += RenderProgressBar;
         }
 
         private void OnDisable()
         {
-            _experience.ExperienceChanged -= RenderProgressBar;
+            _health.HealthChanged -= RenderProgressBar;
         }
 
-        private void RenderProgressBar(float experience)
+        private void RenderProgressBar(float health)
         {
-            _progressBar.fillAmount = experience / _levels.MaxExperience;
+            _progressBar.fillAmount = health / _levels.StartHealth;
         }
     }
 }

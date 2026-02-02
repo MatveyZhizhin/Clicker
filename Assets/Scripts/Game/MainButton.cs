@@ -6,42 +6,43 @@ using UnityEngine;
 
 namespace Assets.Scripts.Game
 {
-    public class MainButton: MonoBehaviour
+    public class MainButton: MonoBehaviour, ITextUser
     {
-        [field: SerializeField] public long MoneyByClick { get; set; }
         [field: SerializeField] public long MoneyByAutoClick { get; set;}
 
-        [field: SerializeField] public long ExperienceByClick { get; set; }
+        [field: SerializeField] public long HealthByClick { get; set; }
      
 
         [SerializeField] private float TimeBetweenAutoClicks;
 
-        private Experience _experience;
+        private Health _health;
         private Money _money;
 
         public event Action<long> Clicked;
+        public event Action<string> TextChanged;
 
         private void Awake()
         {
-            _experience = FindObjectOfType<Experience>();
+            _health = FindObjectOfType<Health>();
             _money = FindObjectOfType<Money>();
         }
 
         private void Start()
         {
             StartCoroutine(AutoClick());
+            TextChanged.Invoke(StringParser.ParseFloatToShortString(MoneyByAutoClick, 1));
         }
 
         public void Click()
         {
-            _money.Add(MoneyByClick);
-            _experience.Add(ExperienceByClick);
-            if (_money.IsDoubled)
+            _health.Remove(HealthByClick);
+            if (_health.IsDoubled)
             {
-                Clicked?.Invoke(MoneyByClick * 2);
+                Clicked?.Invoke(HealthByClick * 2);
                 return;
             }
-            Clicked?.Invoke(MoneyByClick);                    
+
+            Clicked?.Invoke(HealthByClick);
         }
 
         private IEnumerator AutoClick()

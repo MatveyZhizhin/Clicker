@@ -8,15 +8,6 @@ namespace Assets.Scripts.Upgraders
     {
         public event Action<string> TextChanged;
 
-        private void Start()
-        {
-            if (IsUnlocked)
-            {
-                UnlockButton();
-            }
-
-            TextChanged?.Invoke(StringParser.ParseFloatToShortString(_mainButton.MoneyByAutoClick, 1));
-        }
 
         public override void Upgrade()
         {

@@ -1,7 +1,5 @@
 using Assets.Scripts.Game;
 using Assets.Scripts.Resources;
-using Assets.Scripts.UI;
-using System;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -28,9 +26,17 @@ namespace Assets.Scripts.Upgraders
             _mainButton = FindObjectOfType<MainButton>();
         }
 
+        private void Start()
+        {
+            if (IsUnlocked)
+            {
+                UnlockButton();
+            }
+        }
+
         public virtual void Upgrade()
         {
-            _money.SpendMoney(_cost);
+            _money.Remove(_cost);
             _purchaseSound.Play();
         }
 
