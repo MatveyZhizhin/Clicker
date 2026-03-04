@@ -31,9 +31,9 @@ namespace Assets.Scripts.YGScripts
         private void Start()
         {
             StartCoroutine(AutoSave());
-        }
+        }        
 
-        private void Save()
+        public void Save()
         {
             if (_levelChanger.CurrentLevel > YandexGame.savesData.CurrentLevel)
             {
